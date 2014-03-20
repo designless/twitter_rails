@@ -1,0 +1,29 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'layouts/user_info' %>
+      </section>
+      <section>
+        <%= render 'layouts/tweet_form' %>
+      </section>
+    </aside>
+
+    <div class="span8">
+      <h3>Tweets</h3>
+      <ol class="tweets">
+        <%= render @tweets %>
+      </ol>
+    </div>
+  </div>
+
+<% else %>
+  <div class="center">
+    <h1>Life is Tech !</h1>
+    <h2>Why don't you change the world ?</h2>
+
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+
+

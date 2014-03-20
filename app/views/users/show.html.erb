@@ -1,0 +1,18 @@
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'layouts/user_info' %> 
+    </section>
+  </aside>
+
+  <div class="span8">
+    <% if @user.tweets.any? %>
+      <h3>Tweets (<%= @user.tweets.count %>)</h3>
+      <ol class="tweets">
+        <%= render @tweets %>
+      </ol>
+      <%= will_paginate @tweets %>
+    <% end %>
+  </div>
+</div>
+
