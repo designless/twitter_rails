@@ -6,10 +6,5 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
-
-  def user_name(id)
-    @user = User.find_by(id)
-    name = @user.name
-  end
   
 end

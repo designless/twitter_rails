@@ -1,6 +1,6 @@
 <li>
   <a href="<%= user_path(tweet.user_id) %>">
-    <span class="tweetUserName"><%= user_name(tweet.user_id) %></span>
+    <span class="tweetUserName"><%= tweet.user.name %></span>
   </a>
   <span class="content"><%= tweet.content %></span>
   <span class="timestamp">
