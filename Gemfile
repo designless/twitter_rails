@@ -4,6 +4,8 @@ ruby '2.1.0'
 # Use devise
 gem 'devise'
 
+gem 'thread_safe', '0.2.0'
+
 # Use bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
