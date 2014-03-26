@@ -5,7 +5,6 @@ TwitterNeo::Application.routes.draw do
   get 'help', to: "static_pages#help"
 
   resources :users, only:[:index, :show]
-
   resources :tweets, only: [:create]
 
   

@@ -1,16 +1,17 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 
-# Use devise
+# additional gems
 gem 'devise'
 
 gem 'thread_safe', '0.2.0'
 
-# Use bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
-# Use paginate
 gem 'will_paginate', '3.0.4'
+
+# Use party_boy
+gem 'party_boy'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

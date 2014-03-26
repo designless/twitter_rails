@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319093251) do
+ActiveRecord::Schema.define(version: 20140325174902) do
+
+  create_table "relationships", force: true do |t|
+    t.integer  "requestor_id",                  null: false
+    t.string   "requestor_type",                null: false
+    t.integer  "requestee_id",                  null: false
+    t.string   "requestee_type",                null: false
+    t.boolean  "restricted",     default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "content"
