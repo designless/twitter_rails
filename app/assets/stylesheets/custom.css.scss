@@ -1,11 +1,25 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+@import url(http://fonts.googleapis.com/css?family=Ropa+Sans);
 
 $lightGray: #999;
+$mainColor: #23a493;  // メインの色
+$bgColor: #fcfff4;  // 背景の色
+$accentColor: #ff5360;  // ボタンの色
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@mixin btn_primary {
+  border-radius: 100px;
+  background: $accentColor;
+  transition: all .3s ease-out;
+  &:hover {
+    background: darken($accentColor, 10%);
+  }
 }
 
 /* universal */
@@ -15,7 +29,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  background: $bgColor;
 }
 
 section {
@@ -27,9 +41,20 @@ textarea {
 }
 
 .center {
+  background: image-url("key-visual.jpg") no-repeat top center;
+  min-height: 520px;
+  padding-top: 100px;
   text-align: center;
-  h1 {
-    margin-bottom: 10px;
+  .copy {
+    padding-bottom: 150px;
+    background: rgba($mainColor, .6);
+    padding: 30px;
+    h1,h2 {
+      color: #fff;
+    }
+  .btn {
+    @include btn_primary;
+    }
   }
 }
 
@@ -37,6 +62,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: 'Ropa Sans', sans-serif;
 }
 
 h1 {
@@ -64,17 +90,42 @@ p {
 
 #logo {
   float: left;
+  padding-top: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
   line-height: 1;
   &:hover {
     color: #fff;
     text-decoration: none;
+  }
+}
+
+
+
+// navbar
+
+.navbar {
+  .navbar-inner {
+    padding: 20px;
+    background: $mainColor;
+    font-family: 'Ropa Sans', sans-serif;
+    border-radius: none !important;
+    box-shadow: none !important;
+  }
+  li {
+    margin-right: 20px;
+    font-size: 20px;
+    padding-top: 0;
+    a {
+      color: #fff !important;
+      text-shadow: none !important;
+      &:hover {
+        opacity: .8;
+      }
+    }
   }
 }
 
@@ -207,4 +258,13 @@ aside {
 
 .users {
   list-style: none;
+}
+
+// new_tweet
+
+#new_tweet {
+  .btn-primary {
+    @include btn_primary;
+    margin-top: 10px;
+  }
 }
